@@ -1,5 +1,5 @@
 ================================================================================
-                    HIRR ASSISTENT - PROJECT ANALYSIS REPORT
+                    AI ASSISTENT ASSISTENT - PROJECT ANALYSIS REPORT
                          Date: 2026-08-03
 ================================================================================
 
@@ -24,10 +24,10 @@ d:\AI Assistent\
 ├── ai_assistent.py                      (208 lines)  Main entry point / AI Assistent class
 ├── requirements.txt             (39 lines)   Dependencies list
 ├── progress.md                  (28 lines)   Project progress tracker
-├── run_hirr.bat                 (batch)      Batch launcher
-├── start_hirr_auto.bat          (batch)      Auto-start launcher
-├── start_hirr_silent.vbs        (VBScript)   Silent launcher
-├── start_hirr_testing.bat       (batch)      Testing mode launcher
+├── run_ai_assistent.bat                 (batch)      Batch launcher
+├── start_ai_assistent_auto.bat          (batch)      Auto-start launcher
+├── start_ai_assistent_silent.vbs        (VBScript)   Silent launcher
+├── start_ai_assistent_testing.bat       (batch)      Testing mode launcher
 │
 ├── database/
 │   ├── __init__.py              (2 lines)
@@ -54,7 +54,7 @@ d:\AI Assistent\
 │   └── platform_paths.py        (320 lines)   Cross-platform app path finder
 │
 ├── data/
-│   ├── hirr.db                  (SQLite DB)
+│   ├── ai_assistent.db                  (SQLite DB)
 │   ├── intents.json             (NLP training data - 173 examples, 38 intents)
 │   ├── activity_tracking.json   (Activity logs JSON)
 │   ├── habits.json              (Learned habits JSON)
@@ -63,7 +63,7 @@ d:\AI Assistent\
 │   └── wish_history.json        (Wish logs JSON)
 │
 └── logs/
-    ├── hirr_YYYYMMDD.log        (4 sets of logs found: Apr 4,7,9,18)
+    ├── ai_assistent_YYYYMMDD.log        (4 sets of logs found: Apr 4,7,9,18)
     └── errors_YYYYMMDD.log      (ALL EMPTY - good sign!)
 
 ================================================================================
@@ -209,11 +209,11 @@ Impact:       Runtime AttributeError if HybridCommandProcessor is ever used.
 ----------------------------------------------------------------------
 Location: modules/voice.py
   listen_for_wake_word_with_indicator() line 386 → uses LARGE wake list
-  is_wake_word_detected() line 297 → uses SMALL strict list ['hirr','here','hir','hello','hey hirr']
-  BUT ai_assistent.py line 68 tells user: "Say hello, hey, hi, or hirr"
+  is_wake_word_detected() line 297 → uses SMALL strict list ['ai_assistent','here','hir','hello','hey ai_assistent']
+  BUT ai_assistent.py line 68 tells user: "Say hello, hey, hi, or ai_assistent"
   So actually "hi" alone never triggers wake in strict mode!
 Impact:       User says "hi" → nothing happens. Frustrating UX.
-Fix:          Add 'hi','yo','hey' alone to strict hirr_sounds list.
+Fix:          Add 'hi','yo','hey' alone to strict ai_assistent_sounds list.
 
 ----------------------------------------------------------------------
 [LOW BUG #6]  argparse imported TWICE in ai_assistent.py
@@ -253,7 +253,7 @@ Coverage: 0%
 ================================================================================
 7. RUNTIME STATUS & STATS (from logs)
 ================================================================================
-Last successful run (from hirr_20260418.log):
+Last successful run (from ai_assistent_20260418.log):
   ✅ NLP Engine trained: 173 examples, 38 intents
   ✅ SpaCy model: en_core_web_sm loaded
   ✅ App Scanner: 35 applications found in Windows Registry

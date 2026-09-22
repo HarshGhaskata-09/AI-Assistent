@@ -759,7 +759,7 @@ class DatabaseManager:
 
 if __name__ == "__main__":
     print("=" * 50)
-    print("📊 TESTING HIRR DATABASE (UPDATED)")
+    print("📊 TESTING AI ASSISTENT DATABASE (UPDATED)")
     print("=" * 50)
     
     # Create database

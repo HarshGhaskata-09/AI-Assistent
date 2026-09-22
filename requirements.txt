@@ -1,4 +1,4 @@
-# Hirr Voice Assistant - Python Dependencies
+# AI Assistent Voice Assistant - Python Dependencies
 
 # Core Voice Recognition & Text-to-Speech
 pyttsx3>=2.90          # Text-to-speech engine

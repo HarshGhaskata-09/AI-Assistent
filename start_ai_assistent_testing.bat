@@ -5,7 +5,7 @@ REM Change to the script directory
 cd /d "%~dp0"
 
 echo ============================================
-echo Starting HIRR in Testing Mode...
+echo Starting AI ASSISTENT in Testing Mode...
 echo ============================================
 
 REM Start AI Assistent in testing mode (direct commands, no wake word)
